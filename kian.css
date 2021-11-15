@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif|Vollkorn+SC');
+
+/* some basic styling */
+body
+{
+  margin: 20px;
+  font-family: 'PT Serif', serif;
+}
+
+h1,h2,h3
+{
+	font-family: 'Vollkorn SC', serif;
+}
+
+code
+{
+		font-weight: bold;
+}
+
+a
+{
+	color: #FFDF6A;
+}
+
+/* header with logo */
+div.header
+{
+	background-image: url(logo.png);
+	background-repeat: no-repeat;
+    background-size: 60px;
+	background-position: 10px 50%;
+}
+
+.header h1
+{
+	text-align: center;
+}
+
+.footer span
+{
+	float: right;
+}
+
+/*
+ *** Here goes the CSS Grid ***
+ */
+/* the outer container to contain the CSS grid
+   defining the areas
+   Default is a one-column layout */
+.wrapper
+{
+	display: grid;
+	grid-gap: 1em;
+	grid-template-areas:
+	"header"
+	"sidebar"
+	"content"
+	"projects"
+	"sidebar2"
+	"footer"
+}
+
+/* on medium screens we use a two-column layout */
+@media only screen and (min-width: 600px)
+{
+    .wrapper
+	{
+		grid-template-columns: 30% auto;
+		grid-template-areas:
+			"header header"
+			"sidebar  content"
+			"projects projects"
+			"sidebar2 sidebar2"
+			"footer   footer";
+    }
+}
+
+/* on wider screens we use a three-column layout */
+@media only screen and (min-width: 1000px)
+{
+    .wrapper
+	{
+		grid-gap: 10px;
+		grid-template-columns: 20% auto 30%;
+		grid-template-areas:
+			"header  header  header"
+			"sidebar content sidebar2"
+			"projects projects projects"
+			"footer  footer  footer";
+    }
+}
+
+/* assign elements to CSS grid areas */
+.sidebar
+{
+	grid-area: sidebar;
+}
+.sidebar2
+{
+    grid-area: sidebar2;
+}
+.content
+{
+	grid-area: content;
+}
+.projects
+{
+	grid-area: projects;
+}
+
+.header
+{
+	grid-area: header;
+}
+.footer
+{
+	grid-area: footer;
+}
+
+/* some styling for the boxes, nothing notable */
+.wrapper
+{
+	background-color: white;
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.header,
+.content
+{
+	background-color: #A1D6F5;
+	color: black;
+}
+
+.footer {
+  background-color: #999;
+}
+
+.sidebar,
+.sidebar2
+{
+  background-color: #CCCCCC;
+  color: #444;
+}
+
+.projects
+{
+	background-color: #0000A6;
+}
+
+.project {
+	background-color: #0054A6;
+}
+
+/*
+ *** Here goes the Flexbox ***
+ */
+/* projects go into a flexbox, this defines the outer container */
+.projects
+{
+	display: flex;
+	padding: 10px;
+	flex-flow: row wrap;
+}
+/* each project is a box in the flexbox
+   they can grow and have a minimum width */
+.project {
+	width: 250px;
+	margin: 10px;
+	padding: 10px;
+	flex-grow: 1;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<meta name="rights" content="All rights reserved" />
+
+	<title>Accurate Timeline</title>
+	
+	<link rel="stylesheet" href="kian.css" type="text/css"/>
+
+	<link rel="icon" href="logo.png">
+
+</head>
+
+<body>
+<div class="wrapper">
+	<div class="box header" style="background-image: url(accurate_timeline.png);">
+		<h1>Accurate Timeline</h1>
+	</div>
+  
+	<div class="box sidebar">
+		<h2>Permissions</h2>
+		<p>This app uses the ACCESS_FINE_LOCATION permission.</p>
+		<p>It also uses the FOREGROUND_SERVICE permission, so it can continue polling the location in the background.</p>
+		<p>It will also ask you to exclude it from battery opimization; otherwise the service will be killed and polling stops.</p>
+		<p>No other permissions will be requested.</p>
+	</div>
+	
+	<div class="box sidebar2">
+		<h2>Privacy</h2>
+		<p>This application will poll your GPS location at a configured interval.</p>
+		<p>It does not use this data, it just makes sure that the phone has an accurate location at any time, which other apps can then use.</p>
+		<p>The app does not store any data locally (other than the setting) and does not transmit any data via the internet or any other channels.</p>
+	</div>
+	
+	<div class="box content">
+		<h2>What it does</h2>
+		<p>If you use Timline in Google Maps, you may have notice that when you walk or cycle slowly, the track is not very accurate. This is because Google Maps is byttery-friendly (and it should be!) and polls for a location infreuently. Unfortunately, you cannot set the polling interval in the app.</p>
+		<p>However, Google Maps will use the location if it can get it "for free", i. e. if another app has already asked for a location.</p>
+		<p>And this is exactly what Accurate Timeline does: it polls for a GPS (fine) location at a configurable interval.</p>
+		<p>All you need to do is open the app, configure the interval (10 seconds works fine for me and does not drain my battery) and press "start". When you leave the app, it will start a background service that continues polling for the location.</p>
+		<p>When you do not need it, you can stop polling from the app or the notification of the service.</p>
+	</div>
+	<div class="box footer">
+		<p>All rights reserved, no copies without permission.
+		<span>
+			<a href="http://jigsaw.w3.org/css-validator/check/referer">
+				<img style="border:0;width:88px;height:31px"
+					src="http://jigsaw.w3.org/css-validator/images/vcss"
+					alt="Valid CSS!" />
+			</a>
+		</span>
+		</p>
+	</div>
+</div>
+</body>
+</html>
